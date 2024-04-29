@@ -15,17 +15,17 @@ namespace CalculadoraDIO
 
         public int Subtracao(int x, int y)
         {
-            return 0;
+            return x - y;
         }
 
         public int Divisao(int x, int y)
         {
-            return 0;
+            return x / y;
         }
 
         public int Multiplicacao(int x, int y)
         {
-            return 0;
+            return x * y;
         }
     }
 }

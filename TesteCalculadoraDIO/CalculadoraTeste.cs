@@ -17,7 +17,7 @@ namespace TesteCalculadoraDIO
         }
 
         [Fact]
-        public void Subtrai_DoisNumeros_RetornaResultadoCorreto() 
+        public void Subtrai_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto() 
         {
             int x = 5; int y = 2; int valorEsperado = 3;
 
@@ -27,7 +27,7 @@ namespace TesteCalculadoraDIO
         }
 
         [Fact]
-        public void Divide_DoisNumeros_RetornaResultadoCorreto() 
+        public void Divide_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto() 
         { 
             int x = 4, y = 2, valorEsperado = 2;
 
