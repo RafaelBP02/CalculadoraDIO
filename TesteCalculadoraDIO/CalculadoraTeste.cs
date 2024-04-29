@@ -32,6 +32,14 @@ namespace TesteCalculadoraDIO
             Assert.Equal(valorEsperado, _calculadora.Divisao(x, y));
         }
 
+        [Fact]
+        public void Divide_PrimeiroNumeroPorZero_RetornaExcessao()
+        {
+            Assert.Throws<DivideByZeroException>(() => 
+                _calculadora.Divisao(7,0)
+            );
+        }
+
         [Theory]
         [InlineData(11, 11, 121)]
         [InlineData(13, 10000, 130000)]
