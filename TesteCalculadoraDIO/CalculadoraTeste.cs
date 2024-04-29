@@ -47,5 +47,17 @@ namespace TesteCalculadoraDIO
         {                       
             Assert.Equal(valorEsperado, _calculadora.Multiplicacao(x, y));
         }
+
+        [Fact]
+        public void Verifica_HistorioTresUltimasOperacoes_RetornaLista()
+        {
+            _calculadora.Soma(1, 2);
+            _calculadora.Subtracao(5, 2);
+            _calculadora.Soma(7, 8);
+            _calculadora.Divisao(10, 2);
+
+            Assert.NotEmpty(_calculadora.Historico());
+            Assert.Equal(3, _calculadora.Historico().Count());
+        }
     }
 }

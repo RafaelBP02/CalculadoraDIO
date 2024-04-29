@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,11 @@ namespace CalculadoraDIO
         public int Multiplicacao(int x, int y)
         {
             return x * y;
+        }
+
+        public List<string> Historico()
+        {
+            return new List<string>();
         }
     }
 }
