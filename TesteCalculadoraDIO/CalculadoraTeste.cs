@@ -16,34 +16,28 @@ namespace TesteCalculadoraDIO
             Assert.Equal(valorEsperado, _calculadora.Soma(x, y));  
         }
 
-        [Fact]
-        public void Subtrai_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto() 
+        [Theory]
+        [InlineData(55, 6, 49)]
+        [InlineData(1000, 1, 999)]
+        public void Subtrai_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto(int x, int y, int valorEsperado) 
         {
-            int x = 5; int y = 2; int valorEsperado = 3;
-
-            int resultado = _calculadora.Subtracao(x, y);   
-
-            Assert.Equal(valorEsperado, resultado);
+            Assert.Equal(valorEsperado, _calculadora.Subtracao(x, y));
         }
 
-        [Fact]
-        public void Divide_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto() 
-        { 
-            int x = 4, y = 2, valorEsperado = 2;
-
-            int resultado = _calculadora.Divisao(x, y);
-
-            Assert.Equal(valorEsperado, resultado);
+        [Theory]
+        [InlineData(1000, 2, 500)]
+        [InlineData(int.MaxValue, int.MaxValue, 1)]
+        public void Divide_PrimeiroNumeroPeloSegundo_RetornaResultadoCorreto(int x, int y, int valorEsperado) 
+        {             
+            Assert.Equal(valorEsperado, _calculadora.Divisao(x, y));
         }
 
-        [Fact]
-        public void Multiplica_DoisNumeros_RetornaResultadoCorreto() 
-        {
-            int x = 5, y= 2, valorEsperado = 10;
-
-            int resultado = _calculadora.Multiplicacao(x, y);
-
-            Assert.Equal(valorEsperado, resultado);
+        [Theory]
+        [InlineData(11, 11, 121)]
+        [InlineData(13, 10000, 130000)]
+        public void Multiplica_DoisNumeros_RetornaResultadoCorreto(int x, int y, int valorEsperado) 
+        {                       
+            Assert.Equal(valorEsperado, _calculadora.Multiplicacao(x, y));
         }
     }
 }
