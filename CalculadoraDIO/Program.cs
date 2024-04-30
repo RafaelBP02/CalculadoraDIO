@@ -9,10 +9,10 @@ Console.WriteLine("////////////////////////////////////////////");
 Console.WriteLine("--------------------------------------------");
 
 
-while(input != 5)
+while(input != 6)
 {
     Console.WriteLine("O que deseja fazer?");
-    Console.WriteLine("(1) Somar (2) Subtrair (3) Dividir (4) Multiplicar (5) Sair");
+    Console.WriteLine("(1) Somar (2) Subtrair (3) Dividir (4) Multiplicar (5) Historico (6) Sair");
 
     try
     {
@@ -39,6 +39,12 @@ while(input != 5)
             Console.WriteLine("Resultado = " + minhaCalculadora.Multiplicacao(2, 2));
             break;
         case 5:
+            foreach(var item in minhaCalculadora.Historico())
+            {
+                Console.WriteLine(item);
+            }
+            break;
+        case 6:
             Console.WriteLine("Obrigado por usar!");
             break;
         default:

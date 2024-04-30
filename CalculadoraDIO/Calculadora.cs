@@ -22,10 +22,10 @@ namespace CalculadoraDIO
             if (historico.Count() > 2)
             {
                 historico.Dequeue();
-                historico.Enqueue(informacao + dataHoje);
+                historico.Enqueue(informacao + ", Registrado em: " + dataHoje);
             }
             else
-                historico.Enqueue(informacao + dataHoje);
+                historico.Enqueue(informacao + ", Registrado em: " + dataHoje);
         }
 
         public int Soma(int x, int y)
