@@ -51,13 +51,14 @@ namespace TesteCalculadoraDIO
         [Fact]
         public void Verifica_HistorioTresUltimasOperacoes_RetornaLista()
         {
-            _calculadora.Soma(1, 2);
-            _calculadora.Subtracao(5, 2);
-            _calculadora.Soma(7, 8);
-            _calculadora.Divisao(10, 2);
+            _calculadora.Soma(2, 2);
+            _calculadora.Multiplicacao(2, 2);
+            _calculadora.Divisao(2, 2);
+            _calculadora.Subtracao(2, 2);
 
-            Assert.NotEmpty(_calculadora.Historico());
-            Assert.Equal(3, _calculadora.Historico().Count());
+            Queue<string> historicoCalculadora = _calculadora.Historico(); 
+            Assert.NotEmpty(historicoCalculadora);
+            Assert.Equal(3, historicoCalculadora.Count());
         }
     }
 }
