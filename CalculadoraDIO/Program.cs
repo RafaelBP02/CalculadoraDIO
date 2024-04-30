@@ -1,13 +1,32 @@
 ﻿using CalculadoraDIO;
 
+List<int> LerDoisNumeros(){
+    Console.WriteLine("Digite dois numeros inteiros separados por espaco");
+    try
+    {
+        string entrada = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(entrada))
+        {
+            Console.WriteLine("Campo vazio. Inserindo valores padrao 1 e 1");
+            return new List<int> { 1, 1 };
+        }
+        return entrada.Split(' ').Select(s => int.Parse(s)).ToList();
+    }
+    catch 
+    {
+        Console.WriteLine("valores invalidos. Inserindo valores padrao 1 e 1");
+        return new List<int> { 1, 1 };
+    }
+}
+
 short input = 1;
+List<int> numeros;
 Calculadora minhaCalculadora = new Calculadora();
 
 Console.WriteLine("////////////////////////////////////////////");
 Console.WriteLine("/////BEM VINDO A CALCULADORA DE CONSOLE/////");
 Console.WriteLine("////////////////////////////////////////////");
 Console.WriteLine("--------------------------------------------");
-
 
 while(input != 6)
 {
@@ -21,22 +40,26 @@ while(input != 6)
     catch (Exception)
     {
         Console.WriteLine("Digite apenas um numero");
-        input = 6;
+        input = 7;
     }
 
     switch (input)
     {
         case 1:
-            Console.WriteLine("Resultado = " + minhaCalculadora.Soma(2, 2));
+            numeros = LerDoisNumeros();
+            Console.WriteLine("Resultado = " + minhaCalculadora.Soma(numeros[0], numeros[1]));
             break;
         case 2:
-            Console.WriteLine("Resultado = " + minhaCalculadora.Subtracao(2, 2));
+            numeros = LerDoisNumeros();
+            Console.WriteLine("Resultado = " + minhaCalculadora.Subtracao(numeros[0], numeros[1]));
             break;
         case 3:
-            Console.WriteLine("Resultado = " + minhaCalculadora.Divisao(2, 2));
+            numeros = LerDoisNumeros();
+            Console.WriteLine("Resultado = " + minhaCalculadora.Divisao(numeros[0], numeros[1]));
             break;
         case 4:
-            Console.WriteLine("Resultado = " + minhaCalculadora.Multiplicacao(2, 2));
+            numeros = LerDoisNumeros();
+            Console.WriteLine("Resultado = " + minhaCalculadora.Multiplicacao(numeros[0], numeros[1]));
             break;
         case 5:
             foreach(var item in minhaCalculadora.Historico())
